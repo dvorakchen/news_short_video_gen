@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  tts_service:
+    build:
+      context: ./tts_service
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "39685:39685"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_RUN_PORT=39685
+    restart: unless-stopped
