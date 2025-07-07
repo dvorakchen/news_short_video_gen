@@ -2,7 +2,7 @@
 
 Generate news short video of PengPai News
 
-![screenshot]('./screenshot.png')
+![screenshot](./screenshot.png)
 
 ## Env
 
